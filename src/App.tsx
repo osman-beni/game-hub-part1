@@ -1,6 +1,8 @@
 import { Grid, GridItem, Stack } from "@chakra-ui/react";
-import "./App.css";
+
 import NavBar from "./components/NavBar";
+
+import "./App.css";
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
       <Grid
         templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
       >
-        <GridItem area="nav" bg="coral">
+        <GridItem area="nav">
           <NavBar />
         </GridItem>
         <Stack hideBelow="lg">
