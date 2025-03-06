@@ -10,6 +10,8 @@ function App() {
     <>
       <Grid
         templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+        maxW="1240px"
+        mx="auto"
       >
         <GridItem area="nav">
           <NavBar />
