@@ -5,7 +5,7 @@ import { range } from "../services/utils";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 function GameGrid() {
-  const { games, error, isLoading } = useGames();
+  const { data: games, error, isLoading } = useGames();
   const skeletons = range(6);
 
   return (
