@@ -10,6 +10,7 @@ function App() {
     <>
       <Grid
         templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+        gridTemplateColumns={{ lg: "auto 1fr" }}
         maxW="1240px"
         mx="auto"
       >
