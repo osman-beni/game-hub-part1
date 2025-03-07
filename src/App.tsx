@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 
 import "./App.css";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           <NavBar />
         </GridItem>
         <Stack hideBelow="lg">
-          <GridItem area="aside">Aside</GridItem>
+          <GridItem area="aside">
+            <GenreList />
+          </GridItem>
         </Stack>
         <GridItem area="main">
           <GameGrid />
