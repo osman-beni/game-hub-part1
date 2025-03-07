@@ -19,8 +19,8 @@ function useData<T>(endpoint: string) {
     apiClient
       .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
       .then((result) => {
-        setData(result.data.results);
         setLoading(false);
+        setData(result.data.results);
       })
       .catch((error) => {
         setLoading(false);
