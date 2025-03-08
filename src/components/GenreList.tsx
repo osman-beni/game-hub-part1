@@ -6,6 +6,7 @@ import {
   Text,
   Button,
   Link,
+  Box,
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
@@ -34,7 +35,7 @@ function GenreList({ onSelectGenre, genre }: Props) {
           >
             <HStack>
               <Image
-                src={getCroppedImageUrl(g.image_background)}
+                src={getCroppedImageUrl(g.image_background) || ""}
                 boxSize="32px"
                 borderRadius="md"
               />

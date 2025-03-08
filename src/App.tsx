@@ -9,6 +9,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import "./App.css";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -36,14 +37,15 @@ function App() {
           />
         </GridItem>
         <Stack hideBelow="lg">
-          <GridItem area="aside" mr={10}>
+          <GridItem area="aside" mr={10} mt={5}>
             <GenreList
               onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
               genre={gameQuery.genre?.name}
             />
           </GridItem>
         </Stack>
-        <GridItem area="main" paddingInline={{ xlDown: "10px" }}>
+        <GridItem area="main" paddingInline={{ xlDown: "10px" }} mt={5}>
+          <GameHeading gameQuery={gameQuery} />
           <Stack
             direction={{ base: "column", md: "row" }}
             alignItems={{ base: "flex-start", md: "flex-end" }}
