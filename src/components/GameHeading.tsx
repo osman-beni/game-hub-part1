@@ -8,14 +8,13 @@ interface Props {
 function GameHeading({ gameQuery }: Props) {
   return (
     <Heading size="3xl" mb={5}>
-      {/* {gameQuery.genre && gameQuery.platform
+      {gameQuery.genre && gameQuery.platform
         ? `${gameQuery.platform.name} ${gameQuery.genre.name} Games`
         : gameQuery.genre
         ? `${gameQuery.genre.name} Games`
         : gameQuery.platform
         ? `${gameQuery.platform.name} Games`
-        : "Games"} */}
-      Yoo Russell
+        : "Yoo Russell"}
     </Heading>
   );
 }
