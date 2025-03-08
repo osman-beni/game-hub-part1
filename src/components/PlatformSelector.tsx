@@ -6,6 +6,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValueText,
+  SelectLabel,
 } from "./ui/select";
 import { createListCollection } from "@chakra-ui/react";
 
@@ -26,8 +27,9 @@ function PlatformSelector({ onSelectPlatform }: Props) {
 
   return (
     <SelectRoot collection={platforms} width="320px">
+      <SelectLabel>Platforms</SelectLabel>
       <SelectTrigger>
-        <SelectValueText placeholder="Platforms" />
+        <SelectValueText placeholder="Choose Platform" />
       </SelectTrigger>
       <SelectContent>
         {platforms.items.map((platform) => (
