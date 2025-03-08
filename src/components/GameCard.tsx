@@ -14,8 +14,10 @@ function GameCard({ game }: Props) {
   return (
     <Card.Root borderRadius="2xl" overflow="hidden">
       <Image src={getCroppedImageUrl(game.background_image)} />
+      <Card.Header fontSize="xl" fontWeight="medium">
+        {game.name}
+      </Card.Header>
       <Card.Body>
-        <Heading>{game.name}</Heading>
         <HStack justifyContent="space-between">
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
