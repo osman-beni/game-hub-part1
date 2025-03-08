@@ -19,10 +19,8 @@ function GameCard({ game }: Props) {
           "/images/no-image-placeholder.webp"
         }
       />
-      <Card.Header fontSize="xl" fontWeight="medium">
-        {game.name}
-      </Card.Header>
-      <Card.Body>
+
+      <Card.Body pb={0}>
         <HStack justifyContent="space-between">
           <PlatformIconList
             platforms={
@@ -34,6 +32,9 @@ function GameCard({ game }: Props) {
           {game.metacritic && <CriticScore score={game.metacritic} />}
         </HStack>
       </Card.Body>
+      <Card.Header fontSize="xl" fontWeight="medium" pt={2} pb={5}>
+        {game.name}
+      </Card.Header>
     </Card.Root>
   );
 }
