@@ -8,18 +8,26 @@ import {
   SelectLabel,
 } from "./ui/select";
 
-function SortSelector() {
+interface Props {
+  onSelectSortOrder(sortOrder: string): void;
+}
+
+function SortSelector({ onSelectSortOrder }: Props) {
   const orders = createListCollection({ items: orderBys });
 
   return (
     <SelectRoot collection={orders} width="320px">
       <SelectLabel>Order by</SelectLabel>
       <SelectTrigger>
-        <SelectValueText placeholder="Choose Order" />
+        <SelectValueText placeholder="Default: Relevance" />
       </SelectTrigger>
       <SelectContent>
         {orders.items.map((order) => (
-          <SelectItem item={order} key={order.value}>
+          <SelectItem
+            onClick={() => onSelectSortOrder(order.value)}
+            item={order}
+            key={order.value}
+          >
             {order.label}
           </SelectItem>
         ))}
@@ -29,12 +37,12 @@ function SortSelector() {
 }
 
 const orderBys = [
-  { label: "Relevance", value: "relevance" },
-  { label: "Date added", value: "date added" },
+  { label: "Relevance", value: "" },
+  { label: "Date added", value: "-added" },
   { label: "Name", value: "name" },
-  { label: "Release Date", value: "release date" },
-  { label: "Popularity", value: "popularity" },
-  { label: "Average Rating", value: "average rating" },
+  { label: "Release Date", value: "-released" },
+  { label: "Popularity", value: "-metacritic" },
+  { label: "Average Rating", value: "-rating" },
 ];
 
 export default SortSelector;

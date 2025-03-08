@@ -13,7 +13,12 @@ interface Props {
 function GameCard({ game }: Props) {
   return (
     <Card.Root borderRadius="2xl" overflow="hidden">
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Image
+        src={
+          getCroppedImageUrl(game.background_image) ||
+          "/images/no-image-placeholder.webp"
+        }
+      />
       <Card.Header fontSize="xl" fontWeight="medium">
         {game.name}
       </Card.Header>
@@ -22,7 +27,7 @@ function GameCard({ game }: Props) {
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
-          <CriticScore score={game.metacritic} />
+          {game.metacritic && <CriticScore score={game.metacritic} />}
         </HStack>
       </Card.Body>
     </Card.Root>
