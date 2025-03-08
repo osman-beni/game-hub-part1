@@ -1,3 +1,4 @@
+import { Platform } from "../hooks/useGames";
 import usePlatforms from "../hooks/usePlatforms";
 import {
   SelectRoot,
@@ -8,7 +9,11 @@ import {
 } from "./ui/select";
 import { createListCollection } from "@chakra-ui/react";
 
-function PlatformSelector() {
+interface Props {
+  onSelectPlatform(platform: Platform): void;
+}
+
+function PlatformSelector({ onSelectPlatform }: Props) {
   const { data, error } = usePlatforms();
 
   if (error) return null;
@@ -26,7 +31,11 @@ function PlatformSelector() {
       </SelectTrigger>
       <SelectContent>
         {platforms.items.map((platform) => (
-          <SelectItem item={platform} key={platform.id}>
+          <SelectItem
+            onClick={() => onSelectPlatform(platform)}
+            item={platform}
+            key={platform.id}
+          >
             {platform.name}
           </SelectItem>
         ))}
