@@ -1,5 +1,4 @@
 import { Image, ImageProps } from "@chakra-ui/react";
-import React from "react";
 
 interface Props {
   rating: number;
