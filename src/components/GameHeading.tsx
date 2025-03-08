@@ -14,7 +14,7 @@ function GameHeading({ gameQuery }: Props) {
         ? `${gameQuery.genre.name} Games`
         : gameQuery.platform
         ? `${gameQuery.platform.name} Games`
-        : "Yoo Russell"}
+        : "Games"}
     </Heading>
   );
 }
